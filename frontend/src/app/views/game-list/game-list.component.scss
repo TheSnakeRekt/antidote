@@ -1,0 +1,57 @@
+
+.game-list-container {
+  display: grid;
+  height: auto;
+  margin: 3% 15%;
+  max-height: 90%;
+  width: auto;
+  max-width: 100%;
+  overflow-y: auto;
+
+  ::ng-deep mat-grid-list{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .mat-grid-tile {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    cursor: pointer;
+    filter: drop-shadow(15px 10px 4px rgba(143, 143, 143, 0.825));
+
+    app-game-card {
+      transition: height .3s ease-in;
+      width: 40%;
+      height: 20%;
+    }
+  }
+
+  ::ng-deep .mat-grid-tile-content {
+    align-items: end;
+    justify-content: start;
+  }
+
+
+  .mat-grid-tile:hover{
+    app-game-card {
+      height: 95%;
+    }
+  }
+}
+
+@media screen and (max-width:759px){
+  .game-list-container {
+    margin: 2% 15%;
+    ::ng-deep mat-grid-list{
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+    .mat-grid-tile:hover{
+      app-game-card {
+        height: 110%;
+      }
+    }
+  }
+
+}

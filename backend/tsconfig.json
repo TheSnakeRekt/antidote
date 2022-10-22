@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",                                  
+    "lib": ["es7"],                                      
+    "module": "CommonJS",                                
+    "rootDir": "./",                                    
+    "resolveJsonModule": true,                         
+    "allowJs": true,                                     
+    "outDir": "dist",                                  
+    "esModuleInterop": true,                            
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                     
+    "noImplicitAny": true,                              
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,                               
+  }
+}

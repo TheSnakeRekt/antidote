@@ -1,0 +1,24 @@
+FROM node:14
+RUN mkdir -p /app
+WORKDIR /app
+COPY src /app/src
+COPY ./app.ts /app
+COPY ./package.json /app
+COPY ./tsconfig.json /app
+
+ARG REDIS_CON_URL
+ARG API_KEY
+ARG PORT
+ARG REDIS_HOST
+ARG REDIS_PORT
+ARG REDIS_EXPIRE_TIME
+
+
+ENV API_KEY $API_KEY
+ENV PORT $PORT
+ENV REDIS_HOST $REDIS_HOST
+ENV REDIS_PORT $REDIS_PORT
+ENV REDIS_EXPIRE_TIME $REDIS_EXPIRE_TIME
+
+RUN npm i && npm run build
+CMD npm run start
