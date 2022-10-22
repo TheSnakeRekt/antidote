@@ -2,16 +2,21 @@
 .game-list-container {
   display: grid;
   height: auto;
-  margin: 3% 15%;
+  margin: 3% 15% 3% 15%;
   max-height: 90%;
   width: auto;
   max-width: 100%;
-  overflow-y: auto;
 
-  ::ng-deep mat-grid-list{
-    margin-left: 2%;
-    margin-right: 2%;
+  .list-container {
+    height: auto;
+    max-height: 100%;
+    overflow-y: auto;
+    ::ng-deep mat-grid-list {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
   }
+
 
   .mat-grid-tile {
     background-size: cover;

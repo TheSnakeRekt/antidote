@@ -16,7 +16,6 @@ services:
     networks:
       - antidote
   backend:
-    image: node:14
     restart: unless-stopped
     ports: 
       - 3000:3000
@@ -33,6 +32,16 @@ services:
       - redis
     networks:
       - antidote
+  frontend:
+    build:
+      context: frontend
+      dockerfile: ./Dockerfile
+    ports: 
+      - 4200:4200
+    expose: 
+      - 4200
+    depends_on:
+      - backend
 networks:
   antidote:
     name: antidote_network

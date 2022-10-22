@@ -1,4 +1,4 @@
-import { Card } from "src/models/card";
+import { Card } from "./../../../models/card";
 
 export function mapGames(gameResponse: any): Card[]{
   return gameResponse.results.map((game: any) => {

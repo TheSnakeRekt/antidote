@@ -1,4 +1,4 @@
-import { GamelistService } from './../../services/gamelist.service';
+import { GamelistService } from 'src/app/services/gamelist.service';
 import { AfterViewChecked, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, Subject, takeUntil, tap } from 'rxjs';
 import { Card } from 'src/models/card';
@@ -23,7 +23,7 @@ export class GameListComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   defaultParams:SearchParams = {
     page : 1,
-    page_size: (this.breakpoint ? 4: 12),
+    page_size: (this.breakpoint ? 4: 9),
     search: ''
   }
 
@@ -82,7 +82,7 @@ export class GameListComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   changePage(event: any){
     this.page = event;
-    this.gamelistService.getGames({search:this.title, search_precise:true, page:event, page_size:(this.breakpoint? 4: 12)}).pipe(
+    this.gamelistService.getGames({search:this.title, search_precise:true, page:event, page_size:(this.breakpoint? 4: 9)}).pipe(
       tap((games:any)=>{
         this.totalItems = games.count
         this.gameList.next(mapGames(games))
