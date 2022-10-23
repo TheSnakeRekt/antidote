@@ -1,30 +1,63 @@
 # Antidote
 
 This project has 2 code sources:
-    - backend
-    - frontend
+
+   - backend -> `http://localhost:3000/`
+   - frontend -> `http://localhost:4200/`
 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+- In order to run this project you mostly need Docker and Docker-compose.
+- Port 3000 and Port 4200 need to be available as well has Port 6379 for the Redis service
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup
 
-## Build
+ - Clone the whole repo into your machine, and cd into the `Antidote` folder.
+ - In your CLI execute `docker-compose up -d --build`
+ - The images should be created and deployed in your machine .
 
-Run `ng build` to build the project. The build artifacts will be stored in the `server/public/` directory.
 
-## Running unit tests
+## Endpoints
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ - You can access the APP through your local browser @ `http://localhost:4200/`
+ - The backend is deployed @ `http://localhost:3000/`
 
-## Running end-to-end tests
+    - It only has one method. `/games`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ `/games`
 
-## Further help
+Retrieves a list of games from RAWG it uses the same QueryParams as the 3rd Party API.
+    
+Example:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    [GET] http://localhost:3000/games?search=Witcher%203&search_precise=true&page=1&page_size=12
+
+QueryParams:
+
+`search`: string
+    
+- Search query.
+
+`search_precise`: boolean
+    
+- Disable fuzziness for the search query.
+
+`page_size`: integer
+    
+- Number of results to return per page.
+
+`page`: integer
+    
+- 	A page number within the paginated result set.
+
+
+## TODO - Improvements
+
+Most of the project is optimized for deployment however there are some thing I would add:
+
+- Unit Testing
+- Env Injection in frontend production build
+- Authentication Middleware for the backend
+- Metric using Grafana our New Relic
