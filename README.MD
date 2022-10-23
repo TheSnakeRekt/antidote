@@ -60,4 +60,4 @@ Most of the project is optimized for deployment however there are some thing I w
 - Unit Testing
 - Env Injection in frontend production build
 - Authentication Middleware for the backend
-- Metric using Grafana our New Relic
+- Metrics using Grafana or New Relic
