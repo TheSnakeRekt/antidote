@@ -26,7 +26,7 @@ This project has 2 code sources:
 
     - It only has one method. `/games`
 
- `/games`
+ ` [GET] /games`
 
 Retrieves a list of games from RAWG it uses the same QueryParams as the 3rd Party API.
     
