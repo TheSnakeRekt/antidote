@@ -14,7 +14,7 @@ This project has 2 code sources:
 
 ## Setup
 
- - Clone the whole repo into your machine, and cd into the `Antidote` folder.
+ - Clone the whole repo into your machine, and cd into the `root` folder.
  - In your CLI execute `docker-compose up -d --build`
  - The images should be created and deployed in your machine .
 
